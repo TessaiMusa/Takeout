@@ -2,9 +2,13 @@ const express = require('express')
 const router = express.Router()
 const {ensureAuthenticated} = require('../config/auth')
 
-
 router.get('/', (req, res) => res.render('welcome'))
 
-router.get('/dashbord', ensureAuthenticated, (req, res) => res.render('dashbord', {name: req.user.name}))
+router.post('/dashbord', ensureAuthenticated, (req,res) => {
+    let type = req.user.type
+    if (!type)
+        res.status(400).send('Error 400')
+    
+})
 
 module.exports = router

@@ -13,7 +13,7 @@ router.get('/login', (req, res) => res.render("login"))
 
 router.post('/login', (req, res, next) => {
     passport.authenticate('local', {
-        successRedirect: '/dashbord',
+        successRedirect: '/page/dashbord',
         failureRedirect: '/users/login',
         failureFlash: true,
     })(req, res, next)
@@ -24,7 +24,7 @@ router.get('/register', (req, res) => res.render("register"))
 
 //register handle
 router.post('/register', (req, res) => {
-    const {name, email, password} = req.body
+    const {name, email, password, type} = req.body
     let errors = []
 
     // verify
@@ -43,8 +43,9 @@ router.post('/register', (req, res) => {
                     res.render('register', {errors})
                 } else {
                     const newUser = new User({
-                        name, email, password
+                        name, email, password, type
                     })
+                    newUser.type = Number(newUser.type)
 
                     // hash password
                     bcrypt.hash(newUser.password, 10, (err, hash) => {
