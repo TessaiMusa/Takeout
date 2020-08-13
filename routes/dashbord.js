@@ -24,8 +24,7 @@ router.get('/view_list', ensureAuthenticated, (req, res) => {
     let vendorName = req.user.name
     Food.find({vendorName: vendorName})
         .then(foods => {
-            console.log(foods)
-            res.send('Check console.log')
+            res.render('vendor/check', {foods})
         })
 })
 

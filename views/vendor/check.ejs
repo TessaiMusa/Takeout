@@ -1,0 +1,10 @@
+<% if(typeof foods !== 'undefined') { %>
+    <% foods.forEach(function(food) { %>
+        <div class="alert alert-danger">
+           <p> <%= food.name %> </p>
+           <p> <%= food.price%> </p>
+           <p> <%= food.description %></p>
+           <a href="view_current/<%=food._id %>">Done</a>
+        </div>
+    <% }) %>
+<% } %>
