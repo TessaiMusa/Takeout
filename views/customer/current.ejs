@@ -1,0 +1,14 @@
+<a href="javascript:window.location.href=window.location.href">Reload page</a>
+<% if(typeof foods !== 'undefined') { %>
+    <% foods.forEach(function(food) { %>
+        <div class="alert alert-danger">
+           <p> <%= food.foodName %> </p>
+           <p> <%= food.vendorName%> </p>
+           <p> <%= food.date %></p>
+           <p> isCompleted: <%= food.completed%> </p>
+           <% if (food.completed) {%>
+                <a href="current_orders/<%=food._id %>">Got Food</a>
+            <%}%>
+        </div>
+    <% }) %>
+<% } %>

@@ -1,0 +1,7 @@
+<% if(typeof foods !== 'undefined') { %>
+    <% foods.forEach(function(food) { %>
+        <div class="alert alert-danger">
+            <%= food.name %>
+        </div>
+    <% }) %>
+<% } %>

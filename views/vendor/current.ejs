@@ -1,0 +1,11 @@
+<a href="javascript:window.location.href=window.location.href">Reload page</a>
+<% if(typeof foods !== 'undefined') { %>
+    <% foods.forEach(function(food) { %>
+        <div class="alert alert-danger">
+           <p> <%= food.foodName %> </p>
+           <p> <%= food.userName%> </p>
+           <p> <%= food.date %></p>
+           <a href="view_current/<%=food._id %>">Done</a>
+        </div>
+    <% }) %>
+<% } %>

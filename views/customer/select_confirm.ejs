@@ -1,0 +1,19 @@
+<% if(typeof food !== 'undefined') { %>
+        <div class="alert alert-danger">
+            <%= food.name %>
+            <a href="../<%= food.vendorName %>"> By <%= food.vendorName %> </a>
+            <p>
+                <%= food.description %>
+            </p>
+            <h4>Confirm?</h4>
+            <form method="POST">
+                <div class="col-sm-6" style="text-align: center;">
+                    <label class="radio-inline"><input type="radio" id="yes" name="type" value="yes"> Yes</label>
+                </div>
+                <div class="col-sm-6" style="text-align: center;">
+                    <label class="radio-inline"><input type="radio" id="no" name="type" value="no" checked> No</label>
+                </div>
+                <button type="submit">Place Order</button>
+            </form>
+        </div>
+<% } %>

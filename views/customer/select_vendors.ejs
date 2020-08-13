@@ -1,0 +1,7 @@
+<% if(typeof vendors !== 'undefined') { %>
+    <% vendors.forEach(function(vendors) { %>
+        <div class="alert alert-danger">
+           <a href="new_order/<%= vendors %>/"> <%= vendors %> </a>
+        </div>
+    <% }) %>
+<% } %>
