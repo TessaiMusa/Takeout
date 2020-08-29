@@ -46,6 +46,9 @@ app.use((req,res,next) => {
     next()
 })
 
+// Statics
+app.use('/static', express.static('static'))
+
 //Routes
 app.use('/', require('./routes/index'))
 app.use('/users', require('./routes/users'))

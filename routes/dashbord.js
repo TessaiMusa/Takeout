@@ -75,7 +75,7 @@ router.post('/vendor', ensureAuthenticated, (req,res) => {
 
 // Customer
 router.get('/customer', ensureAuthenticated, (req,res) => {
-    res.render('customer/dashbord')
+    res.render('customer/dashboard2')
 })
 
 router.get('/offers', ensureAuthenticated, (req, res) => {

@@ -1,0 +1,121 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+@font-face {
+  font-family: pacifico;
+  src: url("Fonts/Pacifico/Pacifico-Regular.ttf");
+}
+@font-face{
+	font-family: ubuntu-m;
+	src: url("Fonts/Ubuntu/Ubuntu-Medium.ttf");
+}
+@font-face {
+	font-family: roboto;
+	src: url("Fonts/Roboto/Roboto-Regular.ttf");
+}
+@font-face {
+	font-family: roboto-m;
+	src: url("Fonts/Roboto/Roboto-Medium.ttf");
+}
+@font-face {
+	font-family: roboto-b;
+	src: url("Fonts/Roboto/Roboto-Bold.ttf");
+}
+@font-face {
+	font-family: robotomono;
+	src: url("Fonts/RobotoMono/RobotoMono-Regular.ttf");
+}
+@font-face {
+	font-family: robotomono-m;
+	src: url("Fonts/RobotoMono/RobotoMono-Medium.ttf");
+}
+#headerlogo{
+  margin: 10px 0 10px 20px;
+}
+#headerlogo img{
+  height: 2.3em;
+  width: 2.3em;
+  padding: 2px;
+  background-color: transparent;
+}
+#headerlogo p{
+  font-family: pacifico;
+  display: inline-flex;
+  margin-top: 0.1em;
+  margin-left: 0.5em;
+  text-transform: uppercase;
+  font-size: 15px;
+  word-spacing: 5px;
+  letter-spacing: 1px;
+  color: #fafafa;
+}
+body{
+  background-image: url("bg1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  backdrop-filter: brightness(80%);
+  transition: background-image .2s ease-in-out;
+}
+.card:hover body{
+  background-image: url("bg.jpg");
+}
+main{
+  display: flex;
+  /*background-color: pink;*/
+  height: 90.7vh;
+  align-items: center;
+  justify-content: center;
+}
+::-webkit-scrollbar{
+  width: 0;
+}
+#cardholder{
+  display: flex;
+}
+.card{
+  display: inline-flex;
+  height: 150px;
+  width: 150px;
+  /*background-color: #ed649f;*/
+  background-image: linear-gradient(45deg, #ab11f2, #f211af);
+  margin-right: 60px;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  text-align: center;
+  line-height: 25px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: 0px 5px 12px 0px rgba(0,0,0,.35);
+  transition: transform .2s;
+}
+.card:hover{
+  transform: scale(1.25);
+}
+.card:last-child{
+  margin-right: 0;
+}
+.card p{
+  font-family: roboto-b;
+  color: #fafafa;
+}
+footer{
+  height: 50px;
+  background-color: #e63582;
+  justify-content: center;
+  align-items: center;
+}
+footer p{
+  font-family: roboto;
+  display: inline-flex;
+  margin-top: 0.1em;
+  margin-left: 0.5em;
+  text-transform: uppercase;
+  font-size: 15px;
+  word-spacing: 5px;
+  letter-spacing: 1px;
+  color: #fafafa;
+}
