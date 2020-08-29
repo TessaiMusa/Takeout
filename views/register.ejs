@@ -5,10 +5,11 @@
             <div style="width:75%; margin-left:auto; margin-right: auto; display: block; margin-bottom: 2%;">
                 <%- include ("./partials/messages") %>
             </div>
-            <form action="/users/register" method="POST">
+            <form name="register" action="/users/register" method="POST" onsubmit="return registerValidation()">
                 <input type="text" id="name" name="name" placeholder="Enter Name" class="form-control" style="width: 75%; margin-left:auto; margin-right: auto;"> <br>
                 <input type="email" id="email" name="email" placeholder="Enter Email" class="form-control" style="width: 75%; margin-left:auto; margin-right: auto;"><br>
                 <input type="password" id="password" name="password" placeholder="Enter Password" class="form-control" style="width: 75%; margin-left:auto; margin-right: auto;"><br>
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" class="form-control" style="width: 75%; margin-left:auto; margin-right: auto;"><br>
                 <div style="width: 75%; margin-left:auto; margin-right: auto;">
                     <div class="row">
                         <div class="col-sm-6" style="text-align: center;">
@@ -26,3 +27,15 @@
         </div>
     </div>
 </div>
+<script>
+    function registerValidation() {
+        let pass = document.forms['register']['password'].value;
+        let confPass = document.forms['register']['confirmPassword'].value;
+        if (pass !== confPass)
+        {
+            alert('Passwords are not same')
+            return false
+        }
+        return true;
+    }
+</script>

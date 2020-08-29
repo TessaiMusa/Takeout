@@ -5,7 +5,7 @@
             <div style="width:75%; margin-left:auto; margin-right: auto; display: block; margin-bottom: 2%;">
                 <%- include ("./partials/messages") %>
             </div>
-            <form action="/users/login" method="POST">
+            <form action="/users/login" method="POST" name="login" onsubmit="return loginValidation()">
                 <input type="email" id="email" name="email" placeholder="Enter Email" class="form-control" style="width: 75%; margin-left:auto; margin-right: auto;"><br>
                 <input type="password" id="password" name="password" placeholder="Enter Password" class="form-control" style="width: 75%; margin-left:auto; margin-right: auto;"><br>
                 <button type="submit" class="btn btn-success" style="width:75%; margin-left:auto; margin-right: auto; display: block;">Login</button>
@@ -14,3 +14,17 @@
         </div>
     </div>
 </div>
+
+<script>
+    function loginValidation() {
+        let mail = document.forms['login']['email'].value;
+        let pass = document.forms['login']['password'].value;
+        console.log(mail)
+        if (mail === '' || pass === '')
+        {
+            alert('Enter correct values')
+            return false
+        }
+        return true;
+    }
+</script>

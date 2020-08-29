@@ -1,4 +1,4 @@
-<form action="vendor" method="POST">
+<form action="vendor" method="POST" name="vendor" onsubmit="return vendorValidator()">
     <h1>Add recipe to your brand</h1>
     <input type="text" name="name" placeholder="Enter recipe name:"><br>
     <textarea name="description" placeholder="Enter short description"></textarea><br>
@@ -8,3 +8,18 @@
 <a href="view_list">View Entire list of things</a><br>
 <a href="view_current">View All current orders</a><br>
 <a href="/logout">Logout</a>
+<script>
+    function vendorValidator() {
+        let name = document.forms['vendor']['name'].value;
+        let description = document.forms['vendor']['description'].value;
+        let price = document.forms['vendor']['price'].value;
+        if (name === '' || description === '' || price === '') {
+            alert("Enter details properly")
+            return false;
+        }
+        if (parseFloat(price) <= 0) {
+            alert("Price should not be less than 0")
+            return false;
+        }
+    }
+</script>
